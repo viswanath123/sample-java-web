@@ -6,22 +6,18 @@ pipeline {
         git(url: 'https://github.com/viswanath123/sample-java-web.git', branch: 'master', credentialsId: 'viswanath123')
       }
     }
-    
-     stage ('Initialize') {
-            steps {
-                sh '''
+    stage('Initialize') {
+      steps {
+        sh '''
                     export PATH=/home/ubuntu/apache-maven-3.5.3/bin
                     export M2_HOME=/home/ubuntu/apache-maven-3.5.3
                 '''
-            }
-        }
-    
+      }
+    }
     stage('Build') {
       steps {
         echo 'build'
-        sh '''mvn clean -Dmaven.test.failure.ignore=true install
-
-echo "test build"'''
+        sh 'mvn clean test'
       }
     }
     stage('Test') {
