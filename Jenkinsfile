@@ -6,14 +6,14 @@ pipeline {
         git(url: 'https://github.com/viswanathch999/sample-java-web.git', branch: 'master', credentialsId: 'viswanathch999')
       }
     }
-    stage('Initialize') {
+    /*stage('Initialize') {
       steps {
         bat '''
                     export PATH=C:\Program Files\apache-maven-3.5.4
                     export M2_HOME=C:\Program Files\apache-maven-3.5.4
                 '''
       }
-    }
+    }*/
     stage('Build') {
       steps {
         echo 'build'
