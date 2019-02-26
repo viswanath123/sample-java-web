@@ -8,9 +8,9 @@ pipeline {
     }
     stage('Initialize') {
       steps {
-        sh '''
-                    export PATH=/home/ubuntu/apache-maven-3.5.3/bin
-                    export M2_HOME=/home/ubuntu/apache-maven-3.5.3
+        bat '''
+                    export PATH=C:\Program Files\apache-maven-3.5.4
+                    export M2_HOME=C:\Program Files\apache-maven-3.5.4
                 '''
       }
     }
