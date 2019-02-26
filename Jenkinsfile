@@ -27,12 +27,12 @@ pipeline {
             echo 'Tests'
           }
         }
-        stage('Junit') {
+        /*stage('Junit') {
           steps {
             echo 'junit tests'
             sh 'mvn test -B -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true'
           }
-        }
+        }*/
         stage('cucumber') {
           steps {
             echo 'cucumber test cases'
